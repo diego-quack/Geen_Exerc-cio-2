@@ -1,0 +1,7 @@
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\bin\Debug\Geen_Exercício2.exe.config
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\bin\Debug\Geen_Exercício2.exe
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\bin\Debug\Geen_Exercício2.pdb
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\obj\Debug\Geen_Exercício2.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\obj\Debug\Geen_Exercício2.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\obj\Debug\Geen_Exercício2.exe
+C:\Users\ACER\source\repos\Geen_Exercício2\Geen_Exercício2\obj\Debug\Geen_Exercício2.pdb

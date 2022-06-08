@@ -8,6 +8,6 @@ namespace Geen_Exercício2.Classes
 {
     abstract class RodaGigante
     {
-        public abstract int GondolaLivre();
+        public abstract void Embarcar(int posicao, Crianca crianca, Adulto adulto);
     }
 }
