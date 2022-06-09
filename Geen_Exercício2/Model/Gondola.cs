@@ -12,59 +12,26 @@ namespace Geen_Exercício2.Classes
         public Pessoa Assento1 { get; set; }
         public Pessoa Assento2 { get; set; }
 
-        public void Embarcar(int posicao, Pessoa crianca, Pessoa adulto)
+        public Gondola()
         {
-            List<String> lista = new List<String>();
+        }
 
-            adulto = new Adulto();
-
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-            lista.Add("Vazio");
-
-            if (crianca.Idade < 12 && adulto == null)
-            {
-                Console.WriteLine("ERRO: Não é permitido embarcar sem responsável");
-            }
-            if (crianca.Idade > 13 && adulto == null)
-            {
-                crianca = new Crianca(crianca.Nome, crianca.Idade);
-                lista.Insert(posicao, crianca.Nome);
-            }
-            else
-            {
-                crianca = new Crianca(crianca.Nome, crianca.Idade, crianca.Responsavel);
-                adulto = new Adulto(adulto.Nome, adulto.Idade);
-                lista.Insert(posicao, crianca.Nome + crianca.Responsavel);
-            }
-
-            foreach (String ob in lista)
-            {
-                Console.WriteLine(ob);
-            }
-
-            public override string ToString()
+        public Gondola(int numero, Pessoa assento1)
         {
-            return Numero + ", " +
+            Numero = numero;
+            Assento1 = assento1;
+        }
+
+        public Gondola(int numero, Pessoa assento1, Pessoa assento2) : this(numero, assento1)
+        {
+            Assento2 = assento2;
+        }
+
+        public override string ToString()
+        {
+            return Numero + ": " + Assento1.Nome + ", " + Assento2.Nome;
         }
     }
-
-
 }
 
 

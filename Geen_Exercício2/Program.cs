@@ -11,7 +11,7 @@ namespace Geen_Exercício2
     {
         static void Main(string[] args)
         {
-            Gondola gondola = new Gondola();
+            RodaGigante roda = new RodaGigante();
 
             Adulto paulo = new Adulto("Paulo", 42);
             Crianca joao = new Crianca("João", 5, paulo);
@@ -19,9 +19,7 @@ namespace Geen_Exercício2
             Crianca pedro = new Crianca("Pedro", 13);
             Crianca henrique = new Crianca("Henrique", 10);
 
-            gondola.Embarcar(2, pedro, null);
+            roda.Embarcar2(2, pedro, paulo);
         }
-
-        
     }
 }
