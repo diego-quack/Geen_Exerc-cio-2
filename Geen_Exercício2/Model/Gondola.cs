@@ -16,12 +16,16 @@ namespace Geen_Exercício2.Classes
         {
         }
 
+        public Gondola(int numero)
+        {
+            Numero = numero;
+        }
+
         public Gondola(int numero, Pessoa assento1)
         {
             Numero = numero;
             Assento1 = assento1;
         }
-
         public Gondola(int numero, Pessoa assento1, Pessoa assento2) : this(numero, assento1)
         {
             Assento2 = assento2;
@@ -29,7 +33,15 @@ namespace Geen_Exercício2.Classes
 
         public override string ToString()
         {
-            return Numero + ": " + Assento1.Nome + ", " + Assento2.Nome;
+            if (Assento1 != null && Assento2 != null)
+            {
+                return Numero + ": " + Assento1.Nome + " e " + Assento2.Nome;
+            }
+            else if (Assento1 != null)
+            {
+                return Numero + ": Somente " + Assento1.Nome;
+            }
+            return "Vazio";
         }
     }
 }

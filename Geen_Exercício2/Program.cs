@@ -19,7 +19,13 @@ namespace Geen_Exercício2
             Crianca pedro = new Crianca("Pedro", 13);
             Crianca henrique = new Crianca("Henrique", 10);
 
-            roda.Embarcar2(2, pedro, paulo);
+            roda.Embarcar(2, joao, maria);
+            roda.Embarcar(2, joao, paulo);
+            roda.Embarcar(3, maria);
+            roda.Embarcar(13, pedro);
+            roda.Embarcar(16, henrique);
+            Console.WriteLine();
+            roda.Status();
         }
     }
 }

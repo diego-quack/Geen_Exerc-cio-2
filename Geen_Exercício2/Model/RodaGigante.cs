@@ -8,26 +8,97 @@ namespace Geen_Exercício2.Classes
 {
     class RodaGigante
     {
-        private List<Gondola> Gondolas = new List<Gondola>(18);
+        private Gondola[] Gondolas = new Gondola[18];
 
         public RodaGigante()
         {
-            foreach (Gondola pessoa in Gondolas)
+        }
+        public void Status()
+        {
+            for (int i = 0; i < Gondolas.Length; i++)
             {
-                Console.WriteLine(pessoa + ": " + "(Vazio)");
+                if (Gondolas[i] != null)
+                {
+                    Console.WriteLine(Gondolas[i].ToString());
+                }
+                else
+                {
+                    Console.WriteLine((i + 1) + ":  Vazio");
+                }
             }
         }
-        public void Embarcar2(int posicao, Crianca crianca, Adulto reponsavel)
+        public void Embarcar(int posicao, Pessoa assento1, Pessoa assento2 = null)
         {
-            Gondola gondola = new Gondola(posicao, crianca, reponsavel);
-            Gondolas.Insert(posicao, gondola);
-            Console.WriteLine(gondola);
-        }
-        public void Embarcar1(int posicao, Crianca crianca)
-        {
-            Gondola gondola = new Gondola(posicao, crianca);
-            Gondolas[posicao] = gondola;
-            Console.WriteLine(gondola);
+            int index = posicao - 1;
+            if (index >= 0 && index < Gondolas.Length)
+            {
+                if (Gondolas[index] == null)
+                {
+                    Gondola gondola = new Gondola(posicao);
+                    if (assento1.Idade > 11)
+                    {
+                        gondola.Assento1 = assento1;
+                        if(assento2 != null)
+                        {
+                            if(assento2.Idade > 11)
+                            {
+                                gondola.Assento2 = assento2;
+                            }
+                            else
+                            {
+                                Crianca crianca = (Crianca)assento2;
+                                if(crianca.Responsavel != null)
+                                {
+                                    if (assento1 == crianca.Responsavel)
+                                    {
+                                        gondola.Assento2 = assento2;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(assento2.Nome + " tem menos de 12 e não está com reponsável.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine(assento2.Nome + " tem menos de 12 anos e está sozinho.");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Crianca crianca = (Crianca)assento1;
+                        if(assento2 != null)
+                        {
+                            if(assento2 == crianca.Responsavel)
+                            {
+                                gondola.Assento1 = assento1;
+                                gondola.Assento2 = assento2;
+                            }
+                            else
+                            {
+                                Console.WriteLine(assento1.Nome + " tem menos de 12 e não está com reponsável.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine(assento1.Nome + " tem menos de 12 anos e está sozinho.");
+                        }
+                    }
+                    if(gondola.Assento1 != null || gondola.Assento2 != null)
+                    {
+                        Gondolas[index] = gondola;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Cheio");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Assento inválido.");
+            }
         }
     }
 }
