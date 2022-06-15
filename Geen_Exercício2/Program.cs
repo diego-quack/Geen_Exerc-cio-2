@@ -21,9 +21,10 @@ namespace Geen_Exercício2
 
             roda.Embarcar(2, joao, maria);
             roda.Embarcar(2, joao, paulo);
-            roda.Embarcar(3, maria);
+            roda.Embarcar(2, maria);
             roda.Embarcar(13, pedro);
             roda.Embarcar(16, henrique);
+
             Console.WriteLine();
             roda.Status();
         }

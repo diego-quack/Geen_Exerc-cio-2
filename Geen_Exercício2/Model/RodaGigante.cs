@@ -23,18 +23,27 @@ namespace Geen_Exercício2.Classes
                 }
                 else
                 {
-                    Console.WriteLine((i + 1) + ":  Vazio");
+                    Console.WriteLine((i + 1) + ": (Vazio)");
                 }
             }
         }
         public void Embarcar(int posicao, Pessoa assento1, Pessoa assento2 = null)
         {
             int index = posicao - 1;
+
             if (index >= 0 && index < Gondolas.Length)
             {
+                while(Gondolas[index] != null)
+                {
+                    if(index == Gondolas.Length - 1)
+                    {
+                        break;
+                    }
+                    index++;
+                }
                 if (Gondolas[index] == null)
                 {
-                    Gondola gondola = new Gondola(posicao);
+                    Gondola gondola = new Gondola(index + 1);
                     if (assento1.Idade > 11)
                     {
                         gondola.Assento1 = assento1;
